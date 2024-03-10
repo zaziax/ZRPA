@@ -16,7 +16,7 @@ ProjectName/
 │
 │   ├── main.py         # 程序主入口文件
 │
-│   ├── gui/            # PyQt相关UI及逻辑
+│   ├── gui/            # PyQt相关UI及逻辑 
 │   │   ├── __init__.py
 │   │   ├── main_window.py     # 主窗口模块
 │   │   ├── widget_elements/   # 自定义拖拽控件
