@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>home</class>
+ <widget class="QWidget" name="home">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>855</width>
+    <height>592</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2">
+   <item>
+    <layout class="QVBoxLayout" name="mainLayout" stretch="1,15,1">
+     <item>
+      <widget class="CommandBar" name="HeaderToolBar"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="Layout_content" stretch="2,9,3">
+       <item>
+        <widget class="SimpleCardWidget" name="ActionMenuBar"/>
+       </item>
+       <item>
+        <widget class="SimpleCardWidget" name="ScriptEditBar">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QTabWidget" name="tabWidget">
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <widget class="QWidget" name="VisualizationTab">
+             <attribute name="title">
+              <string>可视化</string>
+             </attribute>
+            </widget>
+            <widget class="QWidget" name="SourceCodeTab">
+             <attribute name="title">
+              <string>源代码</string>
+             </attribute>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="SimpleCardWidget" name="AttributeBar"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="SimpleCardWidget" name="foot"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CardWidget</class>
+   <extends>QFrame</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SimpleCardWidget</class>
+   <extends>CardWidget</extends>
+   <header>qfluentwidgets</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CommandBar</class>
+   <extends>QFrame</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
