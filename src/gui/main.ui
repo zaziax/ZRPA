@@ -6,23 +6,65 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>855</width>
-    <height>592</height>
+    <width>932</width>
+    <height>825</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2">
-   <item>
-    <layout class="QVBoxLayout" name="mainLayout" stretch="1,15,1">
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="mainLayout" stretch="1,15">
      <item>
       <widget class="CommandBar" name="HeaderToolBar"/>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="Layout_content" stretch="2,9,3">
+      <layout class="QHBoxLayout" name="Layout_content" stretch="3,9,2">
        <item>
-        <widget class="SimpleCardWidget" name="ActionMenuBar"/>
+        <widget class="SimpleCardWidget" name="ActionMenuBar">
+         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,10">
+          <item>
+           <widget class="SimpleCardWidget" name="SimpleCardWidget">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="IconWidget" name="IconWidget">
+               <property name="icon">
+                <iconset resource="../resources/img/rpa.qrc">
+                 <normaloff>:/icon/jigsaw.png</normaloff>:/icon/jigsaw.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="CaptionLabel" name="CaptionLabel">
+               <property name="text">
+                <string>动作列表</string>
+               </property>
+               <property name="pixelFontSize" stdset="0">
+                <number>20</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="TreeWidget" name="TreeWidget">
+            <column>
+             <property name="text">
+              <string notr="true">1</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
         <widget class="SimpleCardWidget" name="ScriptEditBar">
@@ -30,17 +72,27 @@
           <item>
            <widget class="QTabWidget" name="tabWidget">
             <property name="currentIndex">
-             <number>1</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="VisualizationTab">
              <attribute name="title">
               <string>可视化</string>
              </attribute>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="ListWidget" name="ListWidget"/>
+              </item>
+             </layout>
             </widget>
             <widget class="QWidget" name="SourceCodeTab">
              <attribute name="title">
               <string>源代码</string>
              </attribute>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <widget class="PlainTextEdit" name="PlainTextEdit"/>
+              </item>
+             </layout>
             </widget>
            </widget>
           </item>
@@ -48,18 +100,26 @@
         </widget>
        </item>
        <item>
-        <widget class="SimpleCardWidget" name="AttributeBar"/>
+        <widget class="SimpleCardWidget" name="AttributeBar">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="ListWidget" name="ListWidget_2"/>
+          </item>
+         </layout>
+        </widget>
        </item>
       </layout>
-     </item>
-     <item>
-      <widget class="SimpleCardWidget" name="foot"/>
      </item>
     </layout>
    </item>
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>IconWidget</class>
+   <extends>QWidget</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
   <customwidget>
    <class>CardWidget</class>
    <extends>QFrame</extends>
@@ -73,14 +133,33 @@
    <container>1</container>
   </customwidget>
   <customwidget>
+   <class>CaptionLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PlainTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
    <class>CommandBar</class>
    <extends>QFrame</extends>
    <header>qfluentwidgets</header>
   </customwidget>
+  <customwidget>
+   <class>ListWidget</class>
+   <extends>QListWidget</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>TreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
  </customwidgets>
- <tabstops>
-  <tabstop>tabWidget</tabstop>
- </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources/img/rpa.qrc"/>
+ </resources>
  <connections/>
 </ui>
