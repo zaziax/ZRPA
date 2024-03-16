@@ -22,10 +22,10 @@
      <item>
       <layout class="QHBoxLayout" name="Layout_content" stretch="3,9,2">
        <item>
-        <widget class="SimpleCardWidget" name="ActionMenuBar">
+        <widget class="SimpleCardWidget" name="ActionMenuLayout">
          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,10">
           <item>
-           <widget class="SimpleCardWidget" name="SimpleCardWidget">
+           <widget class="SimpleCardWidget" name="ActionListLabel">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -34,7 +34,7 @@
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
-              <widget class="IconWidget" name="IconWidget">
+              <widget class="IconWidget" name="ActionListLableIcon">
                <property name="icon">
                 <iconset resource="../resources/img/rpa.qrc">
                  <normaloff>:/icon/jigsaw.png</normaloff>:/icon/jigsaw.png</iconset>
@@ -42,7 +42,7 @@
               </widget>
              </item>
              <item>
-              <widget class="CaptionLabel" name="CaptionLabel">
+              <widget class="CaptionLabel" name="ActionListLabelName">
                <property name="text">
                 <string>动作列表</string>
                </property>
@@ -55,7 +55,7 @@
            </widget>
           </item>
           <item>
-           <widget class="TreeWidget" name="TreeWidget">
+           <widget class="TreeWidget" name="ActionList">
             <column>
              <property name="text">
               <string notr="true">1</string>
@@ -67,10 +67,10 @@
         </widget>
        </item>
        <item>
-        <widget class="SimpleCardWidget" name="ScriptEditBar">
+        <widget class="SimpleCardWidget" name="ScriptEditLayout">
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QTabWidget" name="tabWidget">
+           <widget class="QTabWidget" name="ScriptEditTab">
             <property name="currentIndex">
              <number>0</number>
             </property>
@@ -80,7 +80,7 @@
              </attribute>
              <layout class="QGridLayout" name="gridLayout">
               <item row="0" column="0">
-               <widget class="ListWidget" name="ListWidget"/>
+               <widget class="ListWidget" name="VisualizationList"/>
               </item>
              </layout>
             </widget>
@@ -90,7 +90,7 @@
              </attribute>
              <layout class="QGridLayout" name="gridLayout_3">
               <item row="0" column="0">
-               <widget class="PlainTextEdit" name="PlainTextEdit"/>
+               <widget class="PlainTextEdit" name="SourceCodeEdit"/>
               </item>
              </layout>
             </widget>
@@ -100,10 +100,10 @@
         </widget>
        </item>
        <item>
-        <widget class="SimpleCardWidget" name="AttributeBar">
+        <widget class="SimpleCardWidget" name="AttributeLayout">
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
-           <widget class="ListWidget" name="ListWidget_2"/>
+           <widget class="ListWidget" name="AttributeList"/>
           </item>
          </layout>
         </widget>
