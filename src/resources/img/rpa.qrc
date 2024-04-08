@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icon">
     <file>jigsaw.png</file>
+    <file>mouse.svg</file>
+    <file>shortcut.svg</file>
   </qresource>
 </RCC>

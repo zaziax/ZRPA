@@ -15,9 +15,16 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="mainLayout" stretch="1,15">
+    <layout class="QVBoxLayout" name="mainLayout" stretch="0,1,15">
      <item>
-      <widget class="CommandBar" name="HeaderToolBar"/>
+      <widget class="QWidget" name="widget" native="true"/>
+     </item>
+     <item>
+      <widget class="CommandBar" name="HeaderToolBar">
+       <property name="lineWidth">
+        <number>10</number>
+       </property>
+      </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="Layout_content" stretch="3,9,2">
@@ -72,7 +79,7 @@
           <item>
            <widget class="QTabWidget" name="ScriptEditTab">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="VisualizationTab">
              <attribute name="title">

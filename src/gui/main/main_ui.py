@@ -68,7 +68,7 @@ class Main_Ui(object):
         # 初始化动作列表并添加到动作菜单布局
         self.ActionList = TreeWidget(self.ActionMenuLayout)
         self.ActionList.setObjectName("ActionList")
-        self.ActionList.headerItem().setText(0, "1")
+        self.ActionList.headerItem().setText(0, "动作列表")
         self.verticalLayout_2.addWidget(self.ActionList)
         self.verticalLayout_2.setStretch(0, 1)
         self.verticalLayout_2.setStretch(1, 10)
