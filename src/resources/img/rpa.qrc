@@ -3,5 +3,18 @@
     <file>jigsaw.png</file>
     <file>mouse.svg</file>
     <file>shortcut.svg</file>
+    <file>click.png</file>
+    <file>move.png</file>
+    <file>shortcutp.png</file>
+    <file>avatar.jpg</file>
+    <file>EN.png</file>
+    <file>CN.png</file>
+    <file>hotkey.png</file>
+    <file>tupian.png</file>
+    <file>imgicon.png</file>
+    <file>robot.png</file>
+    <file>set.png</file>
+    <file>zrpaicon.png</file>
+    <file>roboticon.png</file>
   </qresource>
 </RCC>

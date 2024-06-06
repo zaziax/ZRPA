@@ -6,6 +6,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from src.gui.icon.Icon import Icon
+
 
 class Main_Ui(object):
     def setupUi(self, home):
@@ -27,11 +29,11 @@ class Main_Ui(object):
         self.mainLayout = QtWidgets.QVBoxLayout()
         self.mainLayout.setObjectName("mainLayout")
 
-        #创建一个占位的空weidget 最小高度45px
-        self.emptyWidget = QtWidgets.QWidget(home)
-        self.emptyWidget.setMaximumHeight(15)
-        self.emptyWidget.setObjectName("emptyWidget")
-        self.mainLayout.addWidget(self.emptyWidget)
+        # #创建一个占位的空weidget 最小高度45px
+        # self.emptyWidget = QtWidgets.QWidget(home)
+        # self.emptyWidget.setMaximumHeight(15)
+        # self.emptyWidget.setObjectName("emptyWidget")
+        # self.mainLayout.addWidget(self.emptyWidget)
         # 初始化头部工具栏并添加到布局
         self.HeaderToolBar = CommandBar(home)
         self.HeaderToolBar.setObjectName("HeaderToolBar")
@@ -80,7 +82,9 @@ class Main_Ui(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.ScriptEditLayout)
         self.verticalLayout.setObjectName("verticalLayout")
         self.ScriptEditTab = QtWidgets.QTabWidget(self.ScriptEditLayout)
+
         self.ScriptEditTab.setObjectName("ScriptEditTab")
+
 
         # 初始化可视化编辑标签页并添加到脚本编辑布局
         self.VisualizationTab = QtWidgets.QWidget()
@@ -91,6 +95,8 @@ class Main_Ui(object):
         self.VisualizationList.setObjectName("VisualizationList")
         self.gridLayout.addWidget(self.VisualizationList, 0, 0, 1, 1)
         self.ScriptEditTab.addTab(self.VisualizationTab, "")
+        # 设置 VisualizationList 风格为 DARK
+
 
         # 初始化源代码编辑标签页并添加到脚本编辑布局
         self.SourceCodeTab = QtWidgets.QWidget()
@@ -103,6 +109,59 @@ class Main_Ui(object):
         self.ScriptEditTab.addTab(self.SourceCodeTab, "")
         self.verticalLayout.addWidget(self.ScriptEditTab)
         self.Layout_content.addWidget(self.ScriptEditLayout)
+
+        ##设置整个 tabwidget 风格为 DARK
+        self.ScriptEditTab.setStyleSheet("QTabBar::tab {height: 30px; width: 100px;}"
+                                        "QTabBar::tab:selected {background-color: #2c2c2c;}"
+                                        "QTabBar::tab:!selected {background-color: #3c3c3c;}")
+        self.ScriptEditTab.setCurrentIndex(0)
+        self.ScriptEditTab.tabBar().setStyleSheet("QTabBar::tab {height: 30px; width: 100px;}"
+                                        "QTabBar::tab:selected {background-color: #2c2c2c;}"
+                                        "QTabBar::tab:!selected {background-color: #3c3c3c;}")
+
+
+
+        # #设置tabwidget 的widget部分风格为 DARK
+        # self.ScriptEditTab.setStyleSheet("QTabWidget::pane {border: 1px solid #2c2c2c;}"
+        #                                 "QTabWidget::tab-bar {alignment: center;}"
+        #                                 "QTabBar::tab {height: 30px; width: 100px;}"
+        #                                 "QTabBar::tab:selected {background-color: #2c2c2c;}"
+        #                                 "QTabBar::tab:!selected {background-color:#3c3c3c;}")
+        # self.ScriptEditTab.tabBar().setStyleSheet("QTabWidget::pane {border: 1px solid #2c2c2c;}"
+        #                                 "QTabWidget::tab-bar {alignment: center;}"
+        #                                 "QTabBar::tab {height: 30px; width: 100px;}"
+        #                                 "QTabBar::tab:selected {background-color: #2c2c2c;}"
+        #                                 "QTabBar::tab:!selected {background-color:#3c3c3c;}")
+
+        self.ScriptEditTab.tabBar().setTabTextColor(0, QColor(255, 255, 255))
+        self.ScriptEditTab.tabBar().setTabTextColor(1, QColor(255, 255, 255))
+        self.ScriptEditTab.tabBar().setTabText(0, "可视化编辑")
+        self.ScriptEditTab.tabBar().setTabText(1, "源代码编辑")
+        self.ScriptEditTab.tabBar().setTabIcon(0,Icon('mouse').icon)
+        self.ScriptEditTab.tabBar().setTabIcon(1,Icon('mouse').icon)
+        self.ScriptEditTab.tabBar().setTabToolTip(0, "可视化编辑")
+        self.ScriptEditTab.tabBar().setTabToolTip(1, "源代码编辑")
+        self.ScriptEditTab.tabBar().setTabEnabled(0, True)
+        self.ScriptEditTab.tabBar().setTabEnabled(1, True)
+        self.ScriptEditTab.tabBar().setTabButton(0, QtWidgets.QTabBar.RightSide, None)
+        self.ScriptEditTab.tabBar().setTabButton(1, QtWidgets.QTabBar.RightSide, None)
+
+        # 设置ScriptEditTab的widget 为 qfluentwidgets 的 SimpleCardWidget
+        self.ScriptEditTab.setStyleSheet("QTabWidget::pane {border: 1px solid #2c2c2c;}"
+                                        "QTabWidget::tab-bar {alignment: center;}"
+                                        "QTabBar::tab {height: 30px; width: 100px;}"
+                                        "QTabBar::tab:selected {background-color: #2c2c2c;}"
+                                        "QTabBar::tab:!selected {background-color:#3c3c3c;}")
+        self.ScriptEditTab.tabBar().setStyleSheet("QTabWidget::pane {border: 1px solid #2c2c2c;}"
+                                        "QTabWidget::tab-bar {alignment: center;}"
+                                        "QTabBar::tab {height: 30px; width: 100px;}"
+                                        "QTabBar::tab:selected {background-color: #2c2c2c;}"
+                                        "QTabBar::tab:!selected {background-color:#3c3c3c;}")
+        self.ScriptEditTab.tabBar().setTabTextColor(0, QColor(255, 255, 255))
+        self.ScriptEditTab.tabBar().setTabTextColor(1, QColor(255, 255, 255))
+
+
+
 
         # 初始化属性布局并添加到内容布局
         self.AttributeLayout = SimpleCardWidget(home)
@@ -140,6 +199,7 @@ class Main_Ui(object):
         home.setWindowTitle(_translate("home", "Form"))
         self.ActionListLabelName.setText(_translate("home", "动作列表"))
         self.ScriptEditTab.setTabText(self.ScriptEditTab.indexOf(self.VisualizationTab), _translate("home", "可视化"))
-        self.ScriptEditTab.setTabText(self.ScriptEditTab.indexOf(self.SourceCodeTab), _translate("home", "源代码"))
-from qfluentwidgets import CaptionLabel, CommandBar, IconWidget, ListWidget, PlainTextEdit, SimpleCardWidget, TreeWidget
+        self.ScriptEditTab.setTabText(self.ScriptEditTab.indexOf(self.SourceCodeTab), _translate("home", "序列化"))
+from qfluentwidgets import CaptionLabel, CommandBar, IconWidget, ListWidget, PlainTextEdit, SimpleCardWidget, \
+    TreeWidget, QColor
 from src.resources.img import  rpa_rc
