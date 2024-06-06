@@ -47,9 +47,6 @@ ProjectName/
 
 ```
 
-https://raw.hellogithub.com/hosts
-
-![image-20240310201729485](F:\RPA\README\image-20240310201729485.png)
 
 
 
